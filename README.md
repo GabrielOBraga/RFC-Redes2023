@@ -57,6 +57,7 @@ O comando de ajuda é o **/help**, onde retorna uma descrição amigável, sobre
 
         ____________________________________________________________________
         Comandos para se comunicar o BragaZap!
+        
         /logout - caso você queira sair do Zap!
         /users - para você ver quais dos seus colegas estão online!
         /changeuser - para você ser um ninja e alterar seu nome de usuário!
