@@ -58,12 +58,14 @@ public class ChatServer {
     }
 
     private synchronized void sendCommandsList(ClientHandler client){
-        client.sendMessage("\n\n______________________________________________________________\n");
+        client.sendMessage("\n\n____________________________________________________________________\n");
         client.sendMessage("Comandos para se comunicar o BragaZap!\n");
         client.sendMessage("/logout - caso você queira sair do Zap!");
         client.sendMessage("/users - para você ver quais dos seus colegas estão online!");
         client.sendMessage("/changeuser - para você ser um ninja e alterar seu nome de usuário!");
         client.sendMessage("/help - cuidado, recursividade encontrada! Error: /help\n");
+        client.sendMessage("\n\n____________________________________________________________________\n");
+
     }
 
     private synchronized void sendUserList(ClientHandler client) {
