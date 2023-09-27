@@ -8,6 +8,70 @@ Projeto Redes - BCC-IFG 2023 (Aluno: Gabriel Oliveira Braga)
 
 **Link**: [Link desse projeto no github](https://github.com/GabrielOBraga/RFC-Redes2023)
 
+## Comandos e Tutorial
+
+Como iniciar e utilizar o Chat Server!
+
+# Iniciando o Servidor
+
+Primeramente se inicia o servidor rodando o ChatServer.main()
+
+    & 'pasta_ate_o_executavel_java.exe' '-cp' 'ChatServer'
+
+Exemplo utilizando o Visual Studio Code
+
+    & 'C:\Program Files\Java\jdk-17\bin\java.exe' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\gabri\AppData\Roaming\Code\User\workspaceStorage\ab7295dbf81058516ef039c606cb423d\redhat.java\jdt_ws\RFC-Redes2023_dc8c22c8\bin' 'ChatServer'
+
+# Tutorial para abrir porta do computador
+
+Em seguida iniciaremos os cliente, pode ser na mesma máquina para teste, ou em máquinas difentes, para isso é necessário liberar a porta no firewall, para que os demais computadores tenha acesso ao computador servidor.
+
+Tutorial de Windowns via Comando [TechExpert Tips](https://techexpert.tips/pt-br/windows-pt-br/windows-abrir-uma-porta-no-firewall-usando-a-linha-de-comando/)
+
+Tutorial de Windowns via Interface [Gestor Tecnico](https://www.gestortecnico.net/2018/06/como-abrir-porta-no-firewall-do-windows10.html)
+
+Tutorial de Linux [Via Comando](https://financeiro.kronichostbrasil.com/index.php?rp=/knowledgebase/11/Liberando-portas-no-Firewall-de-um-Servidor-Windows-e-Linux..html)
+
+# Iniciando o Cliente
+
+Com o servidor já iniciado, agora ele está em modo de espera por novas conexões, como o codigo é feito em multi threads, fica a critério do sistema operacional dar suporte e limitar a quantidade máxima de conexões.
+
+Nota:
+
+    Caso tenha alterado a porta de conexão do servidor [Linha 28 do ChatServer](https://vscode.dev/github/GabrielOBraga/RFC-Redes2023/blob/main/ChatServer.java#L28), é necessário alterar também na [Linha 24 do ChatCliente](https://vscode.dev/github/GabrielOBraga/RFC-Redes2023/blob/main/ChatClient.java#L24)
+
+o Comando para iniciar o ChatCliente segue o mesmo padrão
+
+    & 'pasta_ate_o_executavel_java.exe' '-cp' 'ChatClient'
+
+Exemplo utilizando o Visual Studio Code
+
+    & 'C:\Program Files\Java\jdk-17\bin\java.exe' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\gabri\AppData\Roaming\Code\User\workspaceStorage\ab7295dbf81058516ef039c606cb423d\redhat.java\jdt_ws\RFC-Redes2023_dc8c22c8\bin' 'ChatClient'
+
+Ao iniciar será pedido pelo nome do usuário logado, não possui nenhum sistema de verificação de autenticade, nomes duplicados, ou senhas, para isso é recomendado um sistema de arquivos, onde é armazenado o login e uma senha de usuário, ao ser cadastrado a primeira vez no sistema.
+o uso de banco de dados também possibilita essa funcionalidade.
+
+# Comandos
+
+O comando de ajuda é o **/help**, onde retorna uma descrição amigável, sobre os outros 3 comandos do sistema!
+
+        ____________________________________________________________________
+        Comandos para se comunicar o BragaZap!
+        /logout - caso você queira sair do Zap!
+        /users - para você ver quais dos seus colegas estão online!
+        /changeuser - para você ser um ninja e alterar seu nome de usuário!
+        /help - cuidado, recursividade encontrada! Error: /help
+        ____________________________________________________________________
+
+Para deslogar com segurança do chat, se utiliza o comando **/logout**
+
+Possui um comando onde ele retorna o nome de todos os usuários que estão ativos no chat, para visualizar use o comando **/users**
+
+Como adição sem utilidade bem definida, mas apenas para fins de possibilidades, foi adicionado o comando **/changeuser** que permite o usuário alterar seu nome, caso tenha escrito errado ao entrar no chat, e deseja fazer a troca
+
+    O comando avisa todos os outros usuários ativos, que foi alterado o nome de usuário
+
+
 ## Descrição do Projeto
 
 # Trabalho sobre camada de aplicação.
@@ -49,5 +113,5 @@ Essas são as classes e interfaces importadas no código:
     java.util.HashMap: Para armazenar os usuários logados e os grupos.
 
     java.util.List: Para representar listas de objetos.
-    
+
     java.util.Map: Para representar mapeamentos de chave-valor.
